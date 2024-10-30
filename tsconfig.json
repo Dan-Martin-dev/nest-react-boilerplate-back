@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -8,8 +10,12 @@
     "allowSyntheticDefaultImports": true,
     "target": "ES2021",
     "sourceMap": true,
+    "paths": {
+      "*": ["node_modules/*"]
+    },
     "outDir": "./dist",
     "baseUrl": "./",
+    "rootDir": "./src", // Your source files
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -17,5 +23,7 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "include": ["src/**/*"], // Ensure this includes your source files
+  "exclude": ["node_modules", "dist"], // Exclude the dist folder
 }
